@@ -88,5 +88,6 @@ JOIN students ON groupsstudents.studentId = students.studentId
 GROUP BY students.firstName, students.surname
 ORDER BY numeroGrupos DESC;
 
+hola
 
 
