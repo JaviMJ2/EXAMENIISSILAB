@@ -1,0 +1,23 @@
+cosas aprendidas con la base de datos del hospital
+- order by unaCosa, otraCosa: ordena primero por unaCosa y luego por otraCosa
+- select curioso:
+select
+(select count(patient_id) from patients p  where p.gender = 'M') as male_count,
+(select count(patient_id) from patients p  where p.gender = 'F') as female_count;
+male	female
+2468	2062
+
+- agrupar por varios factores: (actúa de la misma forma que antes con el order by)
+
+SELECT
+  patient_id,
+  diagnosis
+FROM admissions
+GROUP BY
+  patient_id,
+  diagnosis
+HAVING COUNT(*) > 1;
+
+- SELECT first_name, last_name, 'Patient' as role FROM patients
+    union all
+select first_name, last_name, 'Doctor' from doctors;
